@@ -1,5 +1,5 @@
 # Docker-Rootless Full Setup
-A tutorial for setting up rootless docker. Extention of https://docs.docker.com/engine/security/rootless/.
+A tutorial for setting up rootless docker. Extension of https://docs.docker.com/engine/security/rootless/.
 
 ## Install
 
