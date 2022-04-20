@@ -9,7 +9,7 @@ apt install -y uidmap
 ```
 
 ### Install docker rootless with it's own script
-Log in as the user(will be referred to as [user]) and move into it's home directory
+As user(will be referred to as [user]), move into the home directory
 ```
 su [user]
 cd
@@ -19,7 +19,18 @@ Install the rootless shell script in the [user]'s home directory.
 ```
 curl -fsSL https://get.docker.com/rootless | sh
 ```
-  
+Insert the 3 ENV variables into the .bashrc file of the [user]
+(Listen to the install scripts output, ignore the systemd parts.)
+
+### Create systemd unit
+As root, create a systemd unit based on the [user]-docker.service file in this repo.
+Then refresh the unit list, and start the service.
+```
+systemctl daemon-reload
+systemctl start [user]-docker.service
+systemctl status [user]-docker.service
+```
+
 ## Testing
 Test with the following command if [user] can have root permissions using docker:
 ```
