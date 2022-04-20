@@ -5,7 +5,8 @@ A tutorial for setting up rootless docker. Extention of https://docs.docker.com/
 
 ### Install packages
 ```
-apt install -y uidmap
+apt update
+apt install uidmap
 ```
 
 ### Install docker rootless with it's own script
@@ -46,3 +47,6 @@ As root:
 ```
 DOCKER_HOST=unix:///home/<user>/.docker/run/docker.sock docker ps
 ```
+
+## Additional information
+If you wish to specify a ***/etc/docker/daemon.json*** you can do it here: ***/home/[user]/.config/docker/daemon.json***
