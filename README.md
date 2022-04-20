@@ -45,7 +45,7 @@ docker ps
 ```
 As root:
 ```
-DOCKER_HOST=unix:///home/<user>/.docker/run/docker.sock docker ps
+DOCKER_HOST=unix:///home/[user]/.docker/run/docker.sock docker ps
 ```
 
 ## Additional information
