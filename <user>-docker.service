@@ -1,0 +1,18 @@
+[Unit]
+Description=Docker rootless as <user>
+After=network.target
+
+[Service]
+Environment="PATH=/home/<user>/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+Environment="XDG_RUNTIME_DIR=/home/<user>/.docker/run"
+Environment="DOCKER_HOST=unix:///home/<user>/.docker/run/docker.sock"
+Type=simple
+User=<user>
+Group=<user>
+WorkingDirectory=/home/<user>
+ExecStart="/home/<user>/bin/dockerd-rootless.sh"
+TimeoutStartSec=0
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target
