@@ -3,7 +3,7 @@ Description=Docker rootless as [user]
 After=network.target
 
 [Service]
-Environment="PATH=/home/[user]/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+Environment="PATH=/home/[user]/bin:$PATH"
 Environment="XDG_RUNTIME_DIR=/home/[user]/.docker/run"
 Environment="DOCKER_HOST=unix:///home/[user]/.docker/run/docker.sock"
 Type=simple
