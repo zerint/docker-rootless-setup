@@ -1,9 +1,9 @@
 [Unit]
-Description=Docker rootless as [user]
+Description=Docker running as [user]
 After=network.target
 
 [Service]
-Environment="PATH=/home/[user]/bin:$PATH"
+Environment="PATH=/home/[user]/bin:/bin:/sbin:$PATH"
 Environment="XDG_RUNTIME_DIR=/home/[user]/.docker/run"
 Environment="DOCKER_HOST=unix:///home/[user]/.docker/run/docker.sock"
 Type=simple
