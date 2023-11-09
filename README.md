@@ -1,7 +1,11 @@
 # Docker-Rootless Full Setup
 A tutorial for setting up rootless docker. Extension of https://docs.docker.com/engine/security/rootless/.
 
-## Install
+## Install script that takes care of systemd user sessions to allow for all rootless features
+[Script](https://github.com/zerint/docker-rootless-setup/blob/main/ubuntu-docker-rootless-setup.sh)
+
+
+## Install manually with root systemd (docker top and any other resource limitation tags will not work)
 
 ### Install packages
 ```
